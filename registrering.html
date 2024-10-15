@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrering</title>
+</head>
+<body>
+    <nav>
+        <li>
+            <a href="innlogging.html">Login</a>
+            <a href="registrering.html">Registrer</a>
+            <a href="vareside.html">Vareside</a>
+            <a href="index.html">Startside</a>
+        </li>
+    </nav>
+    
+    <form action="">
+        <label for="Brukernavn">Brukernavn</label>
+        <input type="text" name="Brukernavn" minlength="5" required><br>
+        <label for="Passord">Passord</label>
+        <input type="password" name="Passord" id="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])." minlength="8" maxlength="16" required><br>
+        <label for="Fornavn">Fornavn</label>
+        <input type="text" name="Fornavn" required><br>
+        <label for="Etternavn">Etternavn</label>
+        <input type="text" name="Etternavn" required><br>
+        <label for="Adresse">Adresse</label>
+        <input type="text" name="Adresse" required><br>
+        <label for="Postnummer">Postnummer</label>
+        <input type="text" name="Postnummer" minlength="4" maxlength="4" required><br>
+        
+
+
+        <input type="submit" value="Registrer">
+        
+    </form>
+</body>
+</html>

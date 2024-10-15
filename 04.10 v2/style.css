@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    'header header header'
+    'nav content sidebar'
+    'nav footer footer';
+
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 100px 4fr 100px;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: blueviolet;
+    background: gray;
+    height: 100vh;
+}
+
+header, footer, main, nav, aside {
+    color: greenyellow;
+    padding: 20px;
+    border: skyblue 1px solid ;
+}
+
+header {
+    grid-area: header;
+    background-color: gray;
+}
+nav {
+    grid-area: nav;
+    background-color: gray;
+}
+main {
+    grid-area: content;
+    background-color: gray;
+}
+footer {
+    grid-area: footer;
+    background-color: gray;
+}
+
+aside {
+    background-color: gray;
+}

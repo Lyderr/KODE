@@ -1,0 +1,70 @@
+:root {
+    --bakgrunnsfarge: #2a2438;
+    --fontfarge: #6bfa58;
+}
+
+body{
+    background-color: rgb(2, 96, 168);
+}
+
+a.knapp{
+    padding: 10px 20px ;
+}
+
+a.knapp:hover{
+    color: var(--fontfarge);
+}
+
+.navi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bakgrunnsfarge);
+    color: var(--fontfarge);
+    border: solid var(--bakgrunnsfarge);
+    border-radius: 10px;
+}
+
+h1.navi {
+    display: flex;
+    justify-content: flex-start;    
+}
+
+.navi2 {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding: 10px 20px;
+    color: var(--fontfarge);
+    text-decoration: none;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bakgrunnsfarge);
+    color: var(--fontfarge);
+    width: 225px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;    
+    box-shadow: 5px 5px black;
+}
+.card img {
+    width: 25%;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 1000px;
+    gap: 30px;
+}

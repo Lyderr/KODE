@@ -1,0 +1,83 @@
+:root{
+    --helvariabel: #2419ed;
+}
+
+section{
+    --enkelvariabel: #444115;
+}
+
+@font-face {
+    font-family: "massetull";
+    src: url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Roboto+Slab:wght@100..900&display=swap'),
+    url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap'),
+    url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&display=swap');
+
+}
+
+@property --logocolor {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #9a1d1d;
+}
+
+p{
+    
+}
+
+@import url(endaMerCss.css);
+
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
+    border: solid var(--logocolor) 5px;
+    font-family: "massetull";
+}
+
+.boi{
+    margin: 15px;
+    border: solid red 5px;
+}
+
+@media (max-width: 800px) {
+    .box{
+        flex-direction: column;
+    }
+}
+
+@keyframes skli {
+    from {
+        margin-left: -15%;
+        color: red;
+    }
+    to {
+        margin-left: 40%;
+        color: green;
+    }
+}
+
+footer{
+    width: 200px;
+    height: 200px;
+    animation-name: skli;
+    animation-duration: 2s;
+    display: flex;
+    justify-content: center;
+    margin-left: 40%;
+    font-family: "massetull";
+}
+
+img{
+    width: 20%;
+}
+
+.snurr:hover {
+    animation:salto 1.5s infinite;
+}
+
+@keyframes salto {
+    to{
+        transform: rotate(720deg)
+    }
+}

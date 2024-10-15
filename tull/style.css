@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+img {
+    width: 15%;
+}
+
+.navi {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    
+}
+
+li {
+    margin-left: 40px;
+}
+
+.logo{
+    display: flex;
+    gap: 20px;
+}
