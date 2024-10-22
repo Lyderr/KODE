@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Skriv inn navn" id="navn">
+    <button type="button" onclick="skrivUt()">Legg til</button><br>
+    <div id="utverdi"></div>
+
+
+<script>
+    function skrivUt(){
+        let innverdi = document.getElementById("navn").value.trim();
+        let utverdi = document.getElementById("utverdi");
+
+        if (innverdi !="") {
+            utverdi.innerHTML = `Velkommen, ${innverdi}!`;
+        }
+        else{
+            utverdi.innerHTML = `Vennligst skriv navnet ditt`;
+        }
+    }
+</script>
+</body>
+</html>

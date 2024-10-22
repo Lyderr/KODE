@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="svar">
+    <label for="rød">Rød</label>
+    <input name="gruppe" type="radio" id="rød"><br>
+    <label for="grønn">Grønn</label>
+    <input name="gruppe" type="radio" id="grønn"><br>
+    <label for="blå">Blå</label>
+    <input name="gruppe" type="radio" id="blå"><br>
+    <button type="button" onclick="klikk()">Velg</button>
+    <h1 id="utskrift"></h1>
+<script>
+    function klikk(){
+        let valgtFarge;
+        let utskrift = document.getElementById("utskrift");
+
+        if (document.getElementById("rød").checked){
+            valgtFarge = "rød"
+        }
+        else if (document.getElementById("grønn").checked){
+            valgtFarge = "grønn"
+        }
+        else {
+            valgtFarge = "blå"
+        }
+
+        utskrift.innerHTML = `Du har valgt fargen ${valgtFarge}`;
+    }
+</script>
+</body>
+</html>

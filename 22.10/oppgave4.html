@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bakgrunn">
+    <div>
+        Rød:<input type="range" min="0" max="255" value="0" name="" id="red">
+        Grønn:<input type="range" min="0" max="255" value="0" name="" id="green">
+        Blå:<input type="range" min="0" max="255" value="0" name="" id="blue">
+        <button onclick="skiftFarge()">Skift farge</button>
+    </div>
+<script>
+    function skiftFarge() {
+        let red = document.getElementById("red").value;
+        let green = document.getElementById("green").value;
+        let blue = document.getElementById("blue").value;
+        document.querySelector("body").style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="nummer1">
+        <select name="" id="kalk">
+            <option value="pluss">+</option>
+            <option value="minus">-</option>
+            <option value="gange">*</option>
+            <option value="dele">/</option>
+        </select>
+        <input type="number" id="nummer2">
+        <button type="button" onclick="kalkuler()">Kalkuler</button>
+        <p id="utskrift"></p>
+    </div>
+
+<script>
+    function kalkuler(){
+        let nummer1 = Number(document.getElementById("nummer1").value);
+        let nummer2 = Number(document.getElementById("nummer2").value);
+        let kalk = document.getElementById("kalk").value;
+        let svar = 0;
+
+        document.getElementById("utskrift").innerHTML = ""
+
+        if (kalk == "pluss"){
+            svar = nummer1 + nummer2;
+        }
+        else if (kalk == "minus"){
+            svar = nummer1 - nummer2;
+        }
+        else if (kalk = "gange"){
+            svar = nummer1 * nummer2;
+        }
+        else {
+            svar = nummer1 / nummer2;
+        }
+
+        document.getElementById("utskrift").innerHTML += `${nummer1} ${kalk} ${nummer2} = ${svar}`
+
+
+    }
+</script>
+</body>
+</html>
