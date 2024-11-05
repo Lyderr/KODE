@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Utregning av sirkelareal!!!?!?!!?!</h1>
+    <input type="number" id="radius" placeholder="Skriv inn radius">
+    <button onclick="sjekk()">Submit</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function sjekk(){
+            let radius = document.getElementById("radius").value;
+            let utskrift = document.getElementById("utskrift");
+
+            utskrift.innerHTML = beregn(radius)
+        }
+
+        function beregn(radius){
+            return `Arealet av sirkelen er ${(Math.PI * radius**2).toFixed(2)}cm<sup>2<sum>`;
+        }
+    </script>
+</body>
+</html>

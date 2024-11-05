@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Utregne volumet til en boks!!!!!!!!!!!!!??!?!?! (OMG)!!</h1>
+    <input type="number" placeholder="Bredde" id="bredde">
+    <input type="number" placeholder="Høyde" id="hoyde">
+    <input type="number" placeholder="Lengde" id="lengde">
+    <button onclick="sjekk()">Submit</button>
+    <div id="utskrift"></div><br>
+    <div id="utskrift2"></div>
+
+    <script>
+        function sjekk(){
+            let bredde = document.getElementById("bredde").value;
+            let hoyde = document.getElementById("hoyde").value;
+            let lengde = document.getElementById("lengde").value;
+            let utskrift = document.getElementById("utskrift");
+            let utskrift2 = document.getElementById("utskrift2");
+
+            utskrift.innerHTML = beregn(bredde, hoyde, lengde)
+            utskrift2.innerHTML = areal(bredde, hoyde, lengde)
+        }
+
+        function beregn(bredde, hoyde, lengde){
+            return `Volumet i boksen er ${bredde * hoyde * lengde}cm<sup>3<sup>`
+        }
+
+        function areal(bredde, hoyde, lengde){
+            return `Arealet av boksen er ${2 * (lengde * bredde) + 2 * (bredde * hoyde) + 2 * (lengde * hoyde)}cm<sup>2<sup>`
+        }
+    </script>
+</body>
+</html>

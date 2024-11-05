@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Navnomaten !!!?!?</h1>
+    <input type="text" placeholder="Fornavn" id="fornavn">
+    <input type="text" placeholder="Mellomnavn" id="mellomnavn">
+    <input type="text" placeholder="Etternavn" id="etternavn">
+    <button onclick="sjekk()">Submit</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function sjekk(){
+            let fornavn = document.getElementById("fornavn").value;
+            let mellomnavn = document.getElementById("mellomnavn").value;
+            let etternavn = document.getElementById("etternavn").value;
+            let utskrift = document.getElementById("utskrift");
+            console.log(fornavn,mellomnavn,etternavn)
+            utskrift.innerHTML = beregn(fornavn, mellomnavn, etternavn)
+        }
+
+        function beregn(fornavn, mellomnavn, etternavn){
+            return `${fornavn[0].toUpperCase()}. ${mellomnavn[0].toUpperCase()}. ${etternavn} er en tulling`
+        }
+    </script>
+</body>
+</html>

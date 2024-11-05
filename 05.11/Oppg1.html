@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kor gammal e du då?</h1>
+    <input type="text" placeholder="Skriv inn Alder" id="alder">
+    <button onclick="oppstart()">Submit</button>
+    <div id="output"></div>
+
+    <script>
+        function oppstart(){
+            let alder = document.getElementById("alder").value;
+            let utskrift = document.getElementById("output");
+
+            utskrift.innerHTML = sjekkAlder(alder)
+        }
+
+        function sjekkAlder(aar){
+            if (aar >= 67) return "Du er pensjonist";
+            else if (aar >= 20) return "Du er voksen";
+            else if (aar >= 13) return "Du er tenåring";
+            else return "Du er ikke gammel nok";
+        }
+
+    </script>
+</body>
+</html>

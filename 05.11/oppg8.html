@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Svindel (toll)!</h1>
+    <input type="number" placeholder="Pris i dollar" id="dollar">
+    <button onclick="sjekk()">Submit</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function sjekk(){
+            let dollar = document.getElementById("dollar").value;
+            let NOK = dollar * 10;
+            let utskrift = document.getElementById("utskrift");
+
+            utskrift.innerHTML = beregn(NOK)
+        }
+
+        function beregn(NOK){
+            return `Det vil koste ${(NOK + 249) * 1.25}NOK å få tak i varen`
+        }
+    </script>
+</body>
+</html>

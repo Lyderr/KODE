@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Areal av firkant Utregning!?!?!!</h1>
+    <input type="number" placeholder="Lengde" id="lengde">
+    <input type="number" placeholder="Bredde" id="bredde">
+    <button onclick="sjekk()">Submit</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function sjekk(){
+            let lengde = document.getElementById("lengde").value;
+            let bredde = document.getElementById("bredde").value;
+            let utskrift = document.getElementById("utskrift");
+
+            utskrift.innerHTML = kalkuler(lengde, bredde)
+        }
+
+        function kalkuler(lengde, bredde){
+            return `Arealet er ${lengde * bredde}cm<sup>2<sup>`;
+        }
+    </script>
+</body>
+</html>

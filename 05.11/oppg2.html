@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kem e størst!?!!</h1>
+    <input type="number" id="tall1" placeholder="Skriv inn tall">
+    <input type="number" id="tall2" placeholder="Skriv inn tall">
+    <button onclick="beregn()">Submit</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function beregn(){
+            let tall1 = document.getElementById("tall1").value;
+            let tall2 = document.getElementById("tall2").value;
+            let utskrift = document.getElementById("utskrift");
+
+            utskrift.innerHTML = kalkuler(tall1, tall2);
+        }
+
+        function kalkuler(tall1, tall2){
+            if (tall1 > tall2) return `${tall1} er større enn ${tall2}`;
+            else if (tall1 < tall2) return `${tall1} er mindre enn ${tall2}`;
+            else return `${tall1} og ${tall2} er like store`;
+        }
+    </script>
+</body>
+</html>
