@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tall som kan deles på 5 og er Partall</h2>
+    <button onclick="startLokke()">Tell</button>
+    <div id="svar"></div>
+
+    <script>
+        function startLokke(){
+            let svar = document.getElementById("svar");
+            let sum = "";
+
+            for(let tall=0; tall <= 100; tall+=2){
+                if (tall % 5 == 0){
+                    sum += `${tall} `;
+            }
+        }
+            svar.innerHTML = sum;
+            console.log(sum)
+        }
+    </script>
+</body>
+</html>

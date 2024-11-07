@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Alt imellom</h2>
+    <input type="number" placeholder="Første Tall" id="tall1">
+    <input type="number" placeholder="Andre Tall" id="tall2">
+    <button onclick="magi()">Magi</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function magi(){
+            let tall1 = document.getElementById("tall1").value;
+            let tall2 = document.getElementById("tall2").value;
+            let utskrift = document.getElementById("utskrift");
+            let svar = "";
+
+            for(tall1; tall1 <= tall2; tall1++){
+                svar += tall1 + "<br>"
+            }
+            utskrift.innerHTML = svar
+        }
+    </script>
+</body>
+</html>

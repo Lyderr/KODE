@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>oppgave 8</h2>
+    <button onclick="startRad()">while</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function startRad(){
+            let utskrift = document.getElementById("utskrift");
+            let i = 1;
+            let svar = "";
+
+            while(i < 7){
+            svar += `Tallet er ${i} <br>`;
+            i ++;
+            }
+            utskrift.innerHTML = svar
+        }
+    </script>
+</body>
+</html>

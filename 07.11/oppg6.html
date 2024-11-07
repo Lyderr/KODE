@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>oppgave 6</h2>
+    <input type="text" placeholder="skriv nokke" id="skriv">
+    <input type="number" placeholder="kor mange" id="tall">
+    <button onclick="teller()">Magi</button>
+    <p id="utskrift"></p>
+
+    <script>
+        function teller(){
+            let utskrift = document.getElementById("utskrift");
+            let skriv = document.getElementById("skriv").value;
+            let tall = document.getElementById("tall").value;
+            let svar = "";
+
+            for (let i=0; i < tall; i++){
+                svar += skriv + "<br>";
+            }
+            utskrift.innerHTML = svar
+
+        }
+    </script>
+</body>
+</html>

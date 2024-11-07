@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Gangetabell</h2>
+    <button onclick="run()">Kjør</button>
+    <div id="utskrift"></div>
+
+    <script>
+        let svar = "";
+        let utskrift = document.getElementById("utskrift");
+        
+        function run(){
+            for(let i=0; i < 101; i++){
+                svar += `${i} x ${i} = ${i * i}`+"<br>"
+            }
+            utskrift.innerHTML = svar
+        }
+    </script>
+</body>
+</html>
