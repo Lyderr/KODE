@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Masse tall</h2>
+    <button onclick="kjor()">Magi</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function kjor(){
+            let utskrift = document.getElementById("utskrift");
+            let tall = 0;
+            let sum = 0;
+            let resultat = "";
+
+            while(sum < 2250){
+                sum += tall;
+                resultat += `Tall: ${tall} -> Sum: ${sum} <br>`
+                tall+=2
+            }
+            utskrift.innerHTML = resultat;
+
+            utskrift.innerHTML += `Siste tallet var ${tall-2}`;
+        }
+    </script>
+</body>
+</html>

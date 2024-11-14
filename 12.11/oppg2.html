@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array oppgave2</h2>
+    <button onclick="skrivUt()">Skriv ut array</button>
+    <button onclick="summer()">Sum av array</button>
+    <button onclick="negativ()">Negative tall</button>
+    <button onclick="skrivSnitt()">Gjennomsnittet av array</button>
+    <button onclick="minTall()">Skriv minste tall</button>
+
+    <div id="output"></div>
+
+    <script>
+        let tall = [34,53,2,-3,34,26,-26,85,3,4,98,2,-12]; 
+
+        function skrivUt(){
+        let result = "";
+
+            for(let i=0; i < tall.length; i++){
+                result += `${tall[i]}, `;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function summer(){
+            let result = 0
+            
+            for(let i=0; i < tall.length; i++){
+                result += tall[i]
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function negativ(){
+            let result = "";
+
+            for(let i=0; i < tall.length; i++){
+                if(tall[i]< 0){
+                    result += `${tall[i]}, `;
+                }
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function skrivSnitt(){
+            let result = 0;
+
+            for(let i=0; i < tall.length; i++){
+                result += tall[i];
+                result = result / tall.length;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function minTall(){
+            
+        }
+    </script>
+</body>
+</html>

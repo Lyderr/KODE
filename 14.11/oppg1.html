@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Liste for dyr</h2>
+    <button onclick="kjorFodselsAar()">Fødselsår</button>
+    <button onclick="kjorForeldre()">Foreldreliste</button>
+    <button onclick="kjorAlder()">Alderliste</button>
+
+    <div id="utskrift"></div>
+
+    <script>
+        let mineDyr = [
+		{ navn: "Millie Vanillie",
+		  fodselsAar: 2020,
+          vekt: "18kg",
+          farge: "brun",
+          rase: "retriever",
+          far: "Donnie",
+          mor: "Margrethe",
+		 },
+
+		{ navn: "Ossy Os-born", 
+		  fodselsAar: 2018,
+          vekt: "30kg",
+          farge: "hvit",
+          rase: "setter",
+          far: "Brun",
+          mor: "Snus",
+		 },
+
+        { navn: "Skipper",
+          fodselsAar: 2020,
+          vekt: "8kg",
+          farge: "grå",
+          rase: "terrier",
+          far: "Max",
+          mor: "Monica",  
+        },
+
+        { navn: "Max",
+          fodselsAar: 2015,
+          vekt: "27kg",
+          farge: "svart",
+          rase: "labrador",
+          far: "Napoleon",
+          mor: "Anne Frank",
+        },
+
+        { navn: "Kvikk",
+          fodselsAar: 2019,
+          vekt: "15kg",
+          farge: "brun",
+          rase: "retriever",
+          far: "Donnie",
+          mor: "Margrethe",
+        },
+		]
+
+        function kjorFodselsAar(){
+            let svar = "";
+                for(let i=0; i < mineDyr.length; i++){
+                    console.log(mineDyr[i].navn)
+                    svar += `${mineDyr[i].navn} ble født i ${mineDyr[i].fodselsAar} <br>`
+                }
+                document.getElementById("utskrift").innerHTML = svar;
+            }
+
+        function kjorForeldre(){
+            let svar = "";
+                for(let i=0; i < mineDyr.length; i++){
+                    console.log(mineDyr[i].far + mineDyr[i].mor)
+                    svar += `${mineDyr[i].navn} sin far heter ${mineDyr[i].far}, og moren heter ${mineDyr[i].mor} <br>`
+                }
+                document.getElementById("utskrift").innerHTML = svar;
+            }
+
+        function kjorAlder(){
+            let svar = "";
+            for(let i=0; i < mineDyr.length; i++){
+                svar += `${mineDyr[i].navn} sin alder er ${2024 - mineDyr[i].fodselsAar} <br>`;
+            }
+            console.log(svar)
+            document.getElementById("utskrift").innerHTML = svar;
+        }
+    </script>
+</body>
+</html>

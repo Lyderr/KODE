@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Duck familien</h2>
+    <button onclick="kjorListe()">Full liste</button>
+    <button onclick="kjorEpost()">Navn og e-post</button>
+    <button onclick="jobbInfo()">Jobb informasjon</button>
+
+    <div id="utskrift"></div>
+
+    <script>
+        let duckFamilien = [
+        {   fornavn: "Donald",
+            etternavn: "Duck",
+            adresse: "Apalveien 111",
+            poststed: "1212",
+            telefon:{
+                privat: 123452,
+                jobb: 2223,
+            },
+            epost:{
+                privat: "donald@duck.no",
+                jobb: "donald@andeby.no",
+            },   
+        },
+
+        {   fornavn: "Ole",
+            etternavn: "Duck",
+            adresse: "Apalveien 111",
+            poststed: "1212",
+            telefon:{
+                privat: 112233,
+                jobb: 3332,
+            },
+            epost:{
+                privat: "ole@duck.no",
+                jobb: "ole@andeby.no",
+            },   
+        },
+
+        {   fornavn: "Dole",
+            etternavn: "Duck",
+            adresse: "Apalveien 111",
+            poststed: "1212",
+            telefon:{
+                privat: 221133,
+                jobb: 4441,
+            },
+            epost:{
+                privat: "dole@duck.no",
+                jobb: "dole@andeby.no",
+            },   
+        },
+
+        {   fornavn: "Doffen",
+            etternavn: "Duck",
+            adresse: "Apalveien 111",
+            poststed: "1212",
+            telefon:{
+                privat: 9992231,
+                jobb: 5552,
+            },
+            epost:{
+                privat: "doffen@duck.no",
+                jobb: "dole@andeby.no",
+            },   
+        },
+        ]
+
+        function kjorListe(){
+            let svar = "";
+            for(let i=0; i < duckFamilien.length; i++){
+                svar += `Fornavn: ${duckFamilien[i].fornavn} <br> Etternavn: ${duckFamilien[i].etternavn} <br> Adresse: ${duckFamilien[i].adresse} <br> 
+                Poststed: ${duckFamilien[i].poststed} <br> Privatnummer: ${duckFamilien[i].telefon.privat} <br> Jobbnummer: ${duckFamilien[i].telefon.jobb} <br>
+                Privat e-post: ${duckFamilien[i].epost.privat} <br> Jobb e-post: ${duckFamilien[i].epost.privat} <br><br>`;
+                //console.log(duckFamilien[i].fornavn)
+            }
+            document.getElementById("utskrift").innerHTML = svar;
+        }
+
+        function kjorEpost(){
+            let svar = "";
+            for(let i=0; i < duckFamilien.length; i++){
+                svar += `Den private e-post adressen til ${duckFamilien[i].fornavn} er ${duckFamilien[i].epost.privat} <br>`;
+            }
+            document.getElementById("utskrift").innerHTML = svar;
+        }
+
+        function jobbInfo(){
+            let svar = "";
+            for(let i=0; i < duckFamilien.length; i++){
+                svar += `${duckFamilien[i].fornavn} ${duckFamilien[i].etternavn} sitt jobbnummer er ${duckFamilien[i].telefon.jobb} <br>`;
+            }
+            document.getElementById("utskrift").innerHTML = svar;
+        }
+    </script>
+</body>
+</html>

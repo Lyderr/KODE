@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stil, td{
+            background-color: greenyellow;
+            border: 2px solid black;
+            text-align: center;     
+        }
+    </style>
+</head>
+<body>
+    <h2>Gangetabell</h2>
+    <button onclick="kjor()">Magi</button>
+    <div id="utskrift"></div>
+
+
+    <script>
+        function kjor(){
+            let utskrift = document.getElementById("utskrift");
+            let resultat = "";
+            
+            resultat += "<table id='myTable'>"
+            for(tall1 = 1; tall1 <= 10; tall1++){
+                resultat += "<tr>"
+                for(tall2 = 1; tall2 <=10; tall2++){
+                    if(tall1 == tall2){
+                        resultat += `<td> *** </td>`
+                        continue;
+                    }
+                    sum = tall1 * tall2
+                    resultat += `<td>${sum} </td>`
+                }
+                resultat += "</tr>"
+            }
+            utskrift.innerHTML += resultat + "</table>"
+
+            document.getElementById("myTable").classList.add("stil")
+        }
+    </script>
+</body>
+</html>

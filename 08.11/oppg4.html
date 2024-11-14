@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Reglen over alle regler</h2>
+    <input type="number" placeholder="Kor mange flasker" id="nummer">
+    <button onclick="kjor()">Magi</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function kjor(){
+            let utskrift = document.getElementById("utskrift");
+            let resultat = "";
+            let i = document.getElementById("nummer").value;
+
+            for(i;i>0;i--){
+                if(i==1){
+                    resultat += `${i} green bottle, hanging on a wall <br> ${i} green bottle, hanging on a wall <br> 
+                If 1 green bottle were to accidentally fall<br> There'd be ${i-1} green bottles, hanging on the wall <br><br>`
+                }
+                else{
+                resultat += `${i} green bottles, hanging on a wall <br> ${i} green bottles, hanging on a wall <br> 
+                If 1 green bottle were to accidentally fall<br> There'd be ${i-1} green bottles, hanging on the wall <br><br>`
+                }
+
+            }
+            utskrift.innerHTML = resultat
+        }
+    </script>
+</body>
+</html>

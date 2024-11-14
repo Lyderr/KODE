@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array tall og magi</h2>
+    <button onclick="skrivUt()">Skriv ut Array</button>
+    <button onclick="baklengs()">Skriv ut baklengs</button>
+    <button onclick="annenHver()">Skriv ut annenhver</button>
+    <button onclick="mindreEnn()">Mindre enn 10</button>
+    <button onclick="skrivPartall()">Skriv ut partall</button>
+    <button onclick="arraySum()">Skriv summen av Array</button>
+    <button onclick="primTall()">Finn primtall</button>
+
+    <div id="output"></div>
+
+    <script>
+        let tall = [34,53,2,3,34,26,26,85,3,4,98,2,12];
+
+        function skrivUt(){
+            let result = "";
+
+            for(let i=0; i < tall.length; i++){
+                result += `${tall[i]}, `;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function baklengs(){
+            let result = "";
+
+            for(let i = (tall.length - 1); i >= 0; i--){
+                result += `${tall[i]}, `
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function annenHver(){
+            let result = "";
+
+            for(let i=0; i < tall.length; i= i+2){
+                result += `${tall[i]}, `;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function mindreEnn(){
+            let result = "";
+
+            for(let i=0; i < tall.length; i++){
+                
+                if(tall[i] <= 10)
+                result += `${tall[i]}, `;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function skrivPartall(){
+            let result = "";
+
+            for(let i=0; i < tall.length; i++){
+                if((tall[i]) % 2 == 0)
+                result += `${tall[i]}, `;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function arraySum(){
+            let result = 0;
+
+            for(let i=0; i < tall.length; i++){
+                result += tall[i]
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function primTall(){
+            let result = "";
+            let primtall = true;
+
+            for(let i=2; i < tall.length; i++){
+                if(tall[i]%2 == 0){
+                    primtall = false
+                    break
+                }
+                else{
+                    document.getElementById("output").innerHTML = tall[i];
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Verdens beste fotballag (GULLET SKA HEM!)</h2>
+    <button onclick="kjorListe()">Lagliste</button>
+
+    <div id="utskrift"></div>
+
+    <script>
+        let lagOpsett = [
+            {   fornavn: "Mathias",
+                etternavn: "Dyngeland",
+                nummer: 1,
+                posisjon: "keeper",
+                fodselsAar: 1995,
+            },
+            {   fornavn: "Ruben",
+                etternavn: "Kristiansen",
+                nummer: 21,
+                posisjon: "venstreback",
+                fodselsAar: 1988,
+            },
+            {   fornavn: "Eivind",
+                etternavn: "Helland",
+                nummer: 26,
+                posisjon: "høyreback",
+                fodselsAar: 2005,
+            },
+            {   fornavn: "Japhet",
+                etternavn: "Sery Larsen",
+                nummer: 6,
+                posisjon: "centreback",
+                fodselsAar: 2000,
+            },
+            {   fornavn:"Fredrik",
+                etternavn: "Pallesen Knudsen",
+                nummer: 3,
+                posisjon: "centreback",
+                fodselsAar: 1996,
+            },
+            {   fornavn: "Emil",
+                etternavn: "Kornvig",
+                nummer: 10,
+                posisjon: "defansiv midbane",
+                fodselsAar: 2000,
+            },
+            {   fornavn: "Felix",
+                etternavn: "Horn Myhre",
+                nummer: 8,
+                posisjon: "midtbane",
+                fodselsAar: 1999,
+            },
+            {   fornavn: "Sander",
+                etternavn: "Kartum",
+                nummer: 18,
+                posisjon: "midtbane",
+                fodselsAar: 1995,
+            },
+            {   fornavn: "Ole Didrik",
+                etternavn: "Blomberg",
+                nummer: 16,
+                posisjon: "høyremidt",
+                fodselsAar: 2000,
+            },
+            {   fornavn: "Niklas",
+                etternavn: "Castro",
+                nummer: 9,
+                posisjon: "venstremidt",
+                fodselsAar: 1996,
+            },
+            {   fornavn: "Aune",
+                etternavn: "Heggebø",
+                nummer: 20,
+                posisjon: "spiss",
+                fodselsAar: 2001,
+            },
+        ]
+
+        function kjorListe(){
+            let svar = "";
+
+            for(let i=0; i < lagOpsett.length; i++){
+                svar += `${lagOpsett[i].fornavn} ${lagOpsett[i].etternavn} er ${lagOpsett[i].posisjon} og bruker nummer ${lagOpsett[i].nummer}. Han er født i ${lagOpsett[i].fodselsAar}. <br><br>`
+            }
+            document.getElementById("utskrift").innerHTML = svar;
+        }
+    </script>
+</body>
+</html>
