@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            background-color: aquamarine;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .carCard{
+            background-color: yellowgreen;
+            max-width: 200px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .utskrift{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oppgaver biler og folk</h1>
+    <button onclick="kjorA()">1 a)</button>
+    <button onclick="kjorTeacher()">Teachers</button>
+    <button onclick="kjorCars()">Cars</button>
+    <div id="utskrift" class="utskrift"></div>
+
+    <script>
+        let people = [
+  {
+    id: 1,
+    name: "Alice",
+    age: 30,
+    occupation: "Engineer",
+    contact: {
+      email: "alice@example.com",
+      phone: "123-456-7890"
+    },
+    address: {
+      city: "New York",
+      country: "USA"
+    }
+  },
+  {
+    id: 2,
+    name: "Bob",
+    age: 25,
+    occupation: "Designer",
+    contact: {
+      email: "bob@example.com",
+      phone: "987-654-3210"
+    },
+    address: {
+      city: "Los Angeles",
+      country: "USA"
+    }
+  },
+  {
+    id: 3,
+    name: "Charlie",
+    age: 35,
+    occupation: "Teacher",
+    contact: {
+      email: "charlie@example.com",
+      phone: "555-555-5555"
+    },
+    address: {
+      city: "Chicago",
+      country: "USA"
+    }
+  },
+  {
+    id: 4,
+    name: "Diana",
+    age: 28,
+    occupation: "Teacher",
+    contact: {
+      email: "diana@example.com",
+      phone: "222-333-4444"
+    },
+    address: {
+      city: "Houston",
+      country: "USA"
+    }
+  }
+];
+
+
+let cars = [
+  {
+    id: 1,
+    make: "Toyota",
+    model: "Corolla",
+    year: 2020,
+    owner: {
+      name: "Alice",
+      id: 1
+    },
+    specs: {
+      color: "Blue",
+      engine: "1.8L",
+      transmission: "Automatic"
+    }
+  },
+  {
+    id: 2,
+    make: "Honda",
+    model: "Civic",
+    year: 2018,
+    owner: {
+      name: "Bob",
+      id: 2
+    },
+    specs: {
+      color: "Red",
+      engine: "2.0L",
+      transmission: "Manual"
+    }
+  },
+  {
+    id: 3,
+    make: "Ford",
+    model: "Focus",
+    year: 2021,
+    owner: {
+      name: "Charlie",
+      id: 3
+    },
+    specs: {
+      color: "White",
+      engine: "1.5L",
+      transmission: "Automatic"
+    }
+  },
+  {
+    id: 4,
+    make: "Tesla",
+    model: "Model 3",
+    year: 2022,
+    owner: {
+      name: "Diana",
+      id: 4
+    },
+    specs: {
+      color: "Black",
+      engine: "Electric",
+      transmission: "Automatic"
+    }
+  }
+];
+  let card = people.map(function(element){
+        return `<div class="card"> <h1>${element.name}</h1><p>Age: ${element.age}</p><h2>${element.occupation}</h2>
+        <p>E-mail: ${element.contact.email} </p><p>  Phone: ${element.contact.phone}</p><br> </div>`
+  }).join(''); //fjerner komma mellom array
+
+  function kjorA(element){
+    document.getElementById("utskrift").innerHTML = card;
+  }
+
+ // let teacher = people.filter(element => {console.log(element.occupation == "Teacher")})
+  let teachers = people.filter(element => { return (element.occupation == "Teacher")})
+console.log(teachers)
+
+//   function checkTeacher(element){
+//     return element.occupation == "Teacher";
+//   }
+
+  function kjorTeacher(){
+    for(let i=0; i < teachers.length; i++){
+    document.getElementById("utskrift").innerHTML += `<div class="card"><h1>${teachers[i].name}</h1> <p>${teachers[i].age}</p><h2>${teachers[i].occupation}</h2>
+    <p>E-mail: ${teachers[i].contact.email}</p><p>Phone: ${teachers[i].contact.phone}</p></div>` }}
+
+    let carCard = cars.map(function(car){
+        return `<div class="carCard"> <h1>${car.make}</h1><h2>${car.model}</h2><p>Owner: ${car.owner.name}</p><p>Engine: ${car.specs.engine}</p></div>`
+    }).join(''); //fjerner komma mellom array
+
+    function kjorCars(car){
+        document.getElementById("utskrift").innerHTML = carCard;
+    }
+        
+    </script>
+</body>
+</html>
