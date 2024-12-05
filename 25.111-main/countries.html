@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            background-color: aquamarine;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .utskrift{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="animals.html">Animals</a>
+        <a href="countries.html">Countries</a>
+        <a href="movies.html">Movies</a>
+    </nav>
+    <h1>Countries</h1>
+    <button onclick="kjorCountry()">Show cards</button>
+    <div id="utskrift" class="utskrift"></div>
+
+    <script>
+
+const countries = [
+  { name: "Japan", capital: "Tokyo", inhabitants: 126300000, flag: "https://flagcdn.com/jp.svg", funFact: "Japan is home to over 6,800 islands." },
+  { name: "Canada", capital: "Ottawa", inhabitants: 38000000, flag: "https://flagcdn.com/ca.svg", funFact: "Canada has the longest coastline in the world." },
+  { name: "Brazil", capital: "Brasília", inhabitants: 214000000, flag: "https://flagcdn.com/br.svg", funFact: "Brazil is the only country in South America that speaks Portuguese." },
+  { name: "Australia", capital: "Canberra", inhabitants: 26000000, flag: "https://flagcdn.com/au.svg", funFact: "Australia has more kangaroos than people." },
+  { name: "Germany", capital: "Berlin", inhabitants: 83000000, flag: "https://flagcdn.com/de.svg", funFact: "Germany is home to over 1,500 varieties of beer." },
+  { name: "India", capital: "New Delhi", inhabitants: 1400000000, flag: "https://flagcdn.com/in.svg", funFact: "India is the world's largest democracy." },
+  { name: "South Africa", capital: "Pretoria", inhabitants: 60000000, flag: "https://flagcdn.com/za.svg", funFact: "South Africa has 11 official languages." },
+  { name: "Italy", capital: "Rome", inhabitants: 59000000, flag: "https://flagcdn.com/it.svg", funFact: "Rome is home to the smallest country in the world, Vatican City." },
+  { name: "USA", capital: "Washington, D.C.", inhabitants: 331000000, flag: "https://flagcdn.com/us.svg", funFact: "The U.S. has the highest number of immigrants in the world." },
+  { name: "France", capital: "Paris", inhabitants: 67000000, flag: "https://flagcdn.com/fr.svg", funFact: "France is the most visited country in the world." }
+];
+
+        let card = countries.map(function(country){
+            return `<div class="card"><img src="${country.flag}">
+                <h2>${country.name}</h2>
+                <h4>Capital: ${country.capital}</h4>
+                <p>Inhabitants: ${country.inhabitants}</p>
+                <p>${country.funFact}</p></div>`
+        }).join('');
+
+        function kjorCountry(country){
+            document.getElementById("utskrift").innerHTML = card;
+        }
+    </script>
+</body>
+</html>

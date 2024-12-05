@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            background-color: rgb(216, 154, 154);
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .utskrift{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="animals.html">Animals</a>
+        <a href="countries.html">Countries</a>
+        <a href="movies.html">Movies</a>
+    </nav>
+    <h1>Movies</h1>
+    <button onclick="start()">Vis alle</button>
+    <select name="" id="genres" onchange="showMovieSelection()">
+        <option value="">Velg sjanger</option>
+        <option value="Sci-Fi">Sci-fi</option>
+        <option value="Action">Action</option>
+        <option value="Romance">Romance</option>
+        <option value="Animation">Animation</option>
+        <option value="Drama">Drama</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Crime">Crime</option>
+    </select>
+
+    <div id="utskrift" class="utskrift"></div>
+
+    <script>
+
+        let utskrift = document.getElementById("utskrift");
+
+        const movies = [
+            { title: "Inception", actors: ["Leonardo DiCaprio", "Joseph Gordon-Levitt"], grossIncome: "$829.9M", releaseYear: 2010, genre: "Sci-Fi" },
+            { title: "The Dark Knight", actors: ["Christian Bale", "Heath Ledger"], grossIncome: "$1.005B", releaseYear: 2008, genre: "Action" },
+            { title: "Titanic", actors: ["Leonardo DiCaprio", "Kate Winslet"], grossIncome: "$2.195B", releaseYear: 1997, genre: "Romance" },
+            { title: "Avatar", actors: ["Sam Worthington", "Zoe Saldana"], grossIncome: "$2.922B", releaseYear: 2009, genre: "Sci-Fi" },
+            { title: "The Lion King", actors: ["Matthew Broderick", "Jeremy Irons"], grossIncome: "$968.5M", releaseYear: 1994, genre: "Animation" },
+            { title: "Forrest Gump", actors: ["Tom Hanks", "Robin Wright"], grossIncome: "$678.2M", releaseYear: 1994, genre: "Drama" },
+            { title: "The Avengers", actors: ["Robert Downey Jr.", "Chris Evans"], grossIncome: "$1.519B", releaseYear: 2012, genre: "Action" },
+            { title: "Jurassic Park", actors: ["Sam Neill", "Laura Dern"], grossIncome: "$1.046B", releaseYear: 1993, genre: "Adventure" },
+            { title: "Frozen", actors: ["Kristen Bell", "Idina Menzel"], grossIncome: "$1.282B", releaseYear: 2013, genre: "Animation" },
+            { title: "The Godfather", actors: ["Marlon Brando", "Al Pacino"], grossIncome: "$250.1M", releaseYear: 1972, genre: "Crime" }
+        ];
+
+        function start(){
+            utskrift.innerHTML = "";
+            movies.map( movie => printMovieCard(movie))
+        }
+
+        function printMovieCard(movie){
+            utskrift.innerHTML += 
+            `<div class="card">
+                <h2>${movie.title}</h2>
+                <h4>${movie.genre}</h4>
+                <p>Released: ${movie.releaseYear}</p>
+                <p>Actors: ${movie.actors}</p>
+                <p>Income: ${movie.grossIncome}</p></div>`
+        }
+
+        function showMovieSelection(){
+            utskrift.innerHTML = "";
+            let selection = document.getElementById("genres").value
+            let filteredSelection = movies.filter((movie) => {return movie.genre == selection})
+            filteredSelection.map(movie => printMovieCard(movie))
+        }
+    </script>
+</body>
+</html>

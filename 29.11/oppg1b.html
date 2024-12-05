@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            background-color: aquamarine;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .utskrift{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>No e d async og await</h1>
+    <button onclick="hentLandInfo()">Land</button>
+
+    <div id="utskrift" class="utskrift"></div>
+
+    <script>
+        async function hentLandInfo(){
+            let utskrift = document.getElementById("utskrift");
+            let svar = await fetch('land.json');
+            let land = await svar.json();
+            return land;
+        }
+        hentLandInfo().then(land => {
+            console.log(land)
+            land.forEach((land) => { utskrift.innerHTML +=
+                        `<div class="card">
+                            <h3>${land.navn}</h3>
+                            <img src="${land.link}">
+                            <p>Hovedstad: ${land.hovedstad}</p>
+                            <p>Folketall: ${land.befolkning}</p>
+                            </div>`                                               
+                    });
+        })
+    </script>
+</body>
+</html>

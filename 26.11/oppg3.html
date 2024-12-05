@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch</h1>
+    <button onclick="lesTekstfil()">Magi</button>
+    <div id="utskrift"></div>
+
+    <script>
+        function lesTekstfil(){
+            let utskrift = document.getElementById("utskrift")
+
+            fetch('Daglige_steg.txt')
+                .then(innhold => innhold.text())
+                .then((tekst) => {
+                    console.log(tekst)
+                    utskrift.innerHTML += `<h3>Her er innholdet:</h3><p>${tekst}</p>`
+                })
+        }
+    </script>
+</body>
+</html>  

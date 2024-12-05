@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            background-color: aquamarine;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        .utskrift{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetch fra json</h1>
+    <button onclick="hentLandInfo()">Land</button>
+
+    <div id="utskrift" class="utskrift"></div>
+<img src="" alt="">
+    <script>
+
+        function hentLandInfo(){
+            let utskrift = document.getElementById("utskrift");
+
+            fetch('land.json')
+                .then((info) => info.json())
+                .then((data) => {
+                    console.log(data)
+                    data.forEach((land) => { utskrift.innerHTML +=
+                        `<div class="card">
+                            <h3>${land.navn}</h3>
+                            <img src="${land.link}">
+                            <p>Hovedstad: ${land.hovedstad}</p>
+                            <p>Folketall: ${land.befolkning}</p>
+                            </div>`                                               
+                    });
+                })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Navneleken</h1>
+    <input type="text" placeholder="Fornavn" id="fornavn">
+    <input type="text" placeholder="Etternavn" id="etternavn">
+    <button onclick="saveNames()">Lagre navn</button>
+    <button onclick="printNames()">Skriv ut navn</button>
+    <div id="utskrift"></div>
+
+    <script>
+        let utskrift = document.getElementById("utskrift");
+
+        function saveNames(){
+            let fnavn = document.getElementById("fornavn").value;
+            let enavn = document.getElementById("etternavn").value;
+
+            localStorage.setItem("fornavn", fnavn);
+            localStorage.setItem("etternavn", enavn);
+        }
+
+        function printNames(){
+            let fnavn = localStorage.getItem("fornavn");
+            let enavn = localStorage.getItem("etternavn");
+            if (fnavn === null){
+                utskrift.innerHTML = "Hyggelig å se nye brukere her! Velkommen til oss!";
+            }
+            if (enavn === null){
+                utskrift.innerHTML = "Hyggelig å se nye brukere her! Velkommen til oss!";
+            }
+            utskrift.innerHTML = `Velkommen til oss, ${fnavn} ${enavn}!`
+        }
+    </script>
+</body>
+</html>

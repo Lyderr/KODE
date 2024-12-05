@@ -1,0 +1,33 @@
+[
+    {
+      "navn": "Norge",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Norway.svg",
+      "hovedstad": "Oslo",
+      "befolkning": 5421241
+    },
+    {
+      "navn": "Japan",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
+      "hovedstad": "Tokyo",
+      "befolkning": 125584838
+    },
+    {
+      "navn": "Brasil",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg",
+      "hovedstad": "Brasília",
+      "befolkning": 213993437
+    },
+    {
+      "navn": "Canada",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
+      "hovedstad": "Ottawa",
+      "befolkning": 38008005
+    },
+    {
+      "navn": "Australia",
+      "link": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg",
+      "hovedstad": "Canberra",
+      "befolkning": 25687041
+    }
+  ]
+  
