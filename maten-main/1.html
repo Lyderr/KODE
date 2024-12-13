@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="3.html">3333333</a></li>
+            <li><h2>Main Header</h2></li>
+            <li><a href="2.html">222222</a></li>
+            <li><a href="1.html">Crypto</a></li>
+          </ul>
+    </nav>
+
+    <main>
+        <div id="utskrift"></div>
+    </main>
+
+
+    <script>
+        window.onload = mainFunction()
+        let utskrift = document.getElementById("utskrift")
+
+        async function mainFunction(){
+            let result = "";
+            let arr = await getJSONdata()
+            await JSONcard(arr)
+        }
+
+        async function getJSONdata() {
+            let res = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
+            let data = await res.json();
+            console.log(data)
+            return data            
+        }
+
+        async function JSONcard(arr) {
+            console.log(arr.bpi)
+            utskrift.innerHTML += `<div class="Ccard">
+                                <h3>Bitcoin price in real time</h3>
+                                <p>1BTC = ${arr.bpi.EUR.rate}${arr.bpi.EUR.symbol}</p>
+                                <p>1BTC = ${arr.bpi.USD.rate}${arr.bpi.USD.symbol}</p>
+                                <p>1BTC = ${arr.bpi.GBP.rate}${arr.bpi.GBP.symbol}</p>
+                                <p>${arr.disclaimer}</p>
+                                </div>
+                                    `
+        }
+    </script>
+
+</body>
+</html>

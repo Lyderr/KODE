@@ -1,0 +1,52 @@
+body{
+    font-family: sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 10% 10% 50% 10% 10%;
+  }
+  
+li {
+    color: white;
+  }
+  
+li  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+li h2 {
+  text-align: center;
+}
+  
+
+ li  a:hover {
+    background-color: #111;
+  }
+
+.Ccard{
+  background-color: #333;
+  border-radius: 15px;
+  color: white;
+  margin: 15px;
+}
+
+.Ccard h3{
+  margin: 10px 10px;
+}
+
+.Ccard p{
+  margin: 10px 10px;
+}
